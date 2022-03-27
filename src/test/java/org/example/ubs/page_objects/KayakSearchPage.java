@@ -87,12 +87,7 @@ public class KayakSearchPage {
     }
 
     private ArrayList<String> removeEmptyPrices(ArrayList<String> priceFlights) {
-        Iterator iter = priceFlights.iterator();
-        while (iter.hasNext()){
-            if(iter.next().equals("")){
-                iter.remove();
-            }
-        }
+        priceFlights.removeIf(o -> o.equals(""));
         return priceFlights;
     }
 
