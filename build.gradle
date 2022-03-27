@@ -1,12 +1,8 @@
 plugins {
     id 'java'
-    id 'application'
 }
 
-application{
-    //URI of the main class/application's entry point
-    mainClassName = 'org.example.ubs.TestKayak'
-}
+
 
 defaultTasks 'clean', 'test'
 
@@ -34,9 +30,4 @@ test {
     testLogging{
         events "passed", "skipped", "failed", "standardOut", "standardError"
     }
-}
-
-task firefox(type: Test){
-    systemProperties['selenide.browser'] = 'firefox'
-    systemProperties['selenide.headless'] = 'true'
 }

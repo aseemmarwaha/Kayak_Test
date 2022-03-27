@@ -22,6 +22,7 @@ public class KayakSearchPage {
         if(cookieText.has(Condition.ownText("Datenschutzrichtlinien"))){
         SelenideElement acceptBtn = $$(By.tagName("Button")).filterBy(Condition.text("Akzeptieren")).first();
         acceptBtn.shouldBe(Condition.visible).click();
+        System.out.println("Cookies settings accepted. Test will start soon");
         }
         else
             throw new Exception();
@@ -142,6 +143,7 @@ public class KayakSearchPage {
             previousArrow.click();
             selectDay(splittedCurrentDate[2]);
         }
+        System.out.println("Entered Return Date, now hitting Search for flights");
     }
 
     private void enterFromDate(String fromDate) {
@@ -184,13 +186,13 @@ public class KayakSearchPage {
             selectDay(splittedCurrentDate[2]);
         }
 
-        System.out.println("Entered From Date, now entering return date");
+        System.out.println("Entered Travel Start Date, now entering Return date");
     }
 
 
 
     private int getNumberOfClicks(String currentDate, String fromDate) {
-               String[] brokenCurrentDate = currentDate.split(" ");
+        String[] brokenCurrentDate = currentDate.split(" ");
         int currentMonthCount = convertMonthToCount(brokenCurrentDate[0]);
         int currentYearCount =  Integer.parseInt(brokenCurrentDate[1]);
         String[] splittedFromDate = fromDate.split("[-]");
@@ -233,7 +235,7 @@ public class KayakSearchPage {
                         break;
                 }
             }
-        System.out.println(sum);}
+        }
         catch (Exception ex){
             System.out.println(ex.getMessage());
         }
@@ -309,7 +311,7 @@ public class KayakSearchPage {
         toTextField.setValue(to);
         SelenideElement resultDropDown = $$(By.cssSelector("span[class*='-subName']")).find(Condition.text(to));
         resultDropDown.shouldBe(Condition.visible).click();
-        System.out.println("To city entered. Now proceeding to enter from Date");
+        System.out.println("Destination city entered. Now proceeding to enter Travel Start Date");
     }
 
     private void enterFromData(String from) {
@@ -320,6 +322,6 @@ public class KayakSearchPage {
 
         SelenideElement resultDropDown = $$(By.cssSelector("span[class*='-subName']")).find(Condition.text(from));
         resultDropDown.shouldBe(Condition.visible).click();
-        System.out.println("from city entered. Now proceeding to enter to city");
+        System.out.println("Origin Location entered. Now proceeding to enter Destination city");
     }
 }

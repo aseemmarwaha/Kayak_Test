@@ -32,8 +32,6 @@ public class TestKayak {
         open("https://kayak.ch");
         new KayakSearchPage().acceptCookies();
         new KayakSearchPage().searchFlights(fromLocation,toLocation,fromDate,returnDate,maxPrice);
-        //new KayakSearchPage().searchFlights("Zürich","Delhi","2022-03-28","2022-10-25",1500);
-
     }
 
 }
