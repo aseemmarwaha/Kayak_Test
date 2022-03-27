@@ -1,13 +1,21 @@
 plugins {
     id 'java'
+    id 'application'
 }
+
+application{
+    //URI of the main class/application's entry point
+    mainClassName = 'org.example.ubs.TestKayak'
+}
+
 defaultTasks 'clean', 'test'
-group 'org.example'
-version '1.0-SNAPSHOT'
+
+
 
 repositories {
     mavenCentral()
 }
+
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
@@ -18,6 +26,11 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    systemProperty 'fromLocation', System.getProperty('fromLocation')
+    systemProperty 'toLocation', System.getProperty('toLocation')
+    systemProperty 'fromDate', System.getProperty('fromDate')
+    systemProperty 'returnDate', System.getProperty('returnDate')
+    systemProperty 'maxPrice', System.getProperty('maxPrice')
     testLogging{
         events "passed", "skipped", "failed", "standardOut", "standardError"
     }
@@ -25,5 +38,5 @@ test {
 
 task firefox(type: Test){
     systemProperties['selenide.browser'] = 'firefox'
-    systemProperties['selenide.headless'] = 'false'
+    systemProperties['selenide.headless'] = 'true'
 }
