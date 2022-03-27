@@ -35,7 +35,7 @@ public class KayakSearchPage {
         enterFromDate(fromDate);
         enterReturnDate(returnDate);
         clickOnSearchButton();
-        System.out.println("Total Flights Found="+checkForResults(maxPrice));
+        System.out.println("Total Flights results displayed on one single page matching the criteria="+checkForResults(maxPrice));
     }
 
     private int checkForResults(int maxPrice) throws InterruptedException {
