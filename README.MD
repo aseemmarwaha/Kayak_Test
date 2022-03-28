@@ -25,3 +25,4 @@ _Feel free to share your feedback!_
 1. Add log4j logging instead of SOP
 2. Add support for Selenoid - Docker support for Selenium
 3. Add support for multiple browsers - Chrome/Edge/Safari
+4. Refactor code to put all variable declarations at the beggining as Selenide supports lazy loading
