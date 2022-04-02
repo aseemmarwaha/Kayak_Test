@@ -2,9 +2,9 @@ Searching Flights on Kayak.ch: Using Selenide
 =============================================
 
 This is a sample project demonstrating how to search for flights between two locations and a date range and finding how
-many flights were found within the input price range
+many flights were found below the maximum price.
 
-**You can checkout and run it locally with a few minutes for firefox browser only.**
+**You can checkout and run it locally within a few minutes for firefox browser only.**
 
 ### How to run with Gradle
 
